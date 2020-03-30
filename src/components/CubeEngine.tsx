@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Cube2DLayout from './Cube2DLayout';
 import Instructions from './Instructions';
 import { createCube, getRandomRotation, Rotation, performRotation } from 'music-cube';
 import useMusic from 'audio/useMusic';
+import Cube3D from './Cube3D';
 
 const RANDOM_MOVE_INTERVAL = 4000;
 const RANDOM_MOVE_DELAY = 2 * RANDOM_MOVE_INTERVAL;
@@ -53,7 +53,7 @@ export default function App() {
 
   return (
     <>
-      <Cube2DLayout cube={cube} rotateCube={rotateCube} />
+      <Cube3D cube={cube} height={800} width={800} />
       <Instructions
         randomMovesEnabled={randomMovesEnabled}
         setRandomMovesEnabled={setRandomMovesEnabled}
